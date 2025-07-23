@@ -1,0 +1,6 @@
+# Generated files
+docker-compose.yml
+
+# Generated folders
+scripts/
+data/
