@@ -8,6 +8,9 @@ sudo apt update  && sudo apt upgrade -y
 #   - xrdp
 sudo apt install -y docker.io docker-compose xrdp
 
+# Docker configuration
+sudo usermod -aG docker $USER
+
 # XRDP configuration
 sudo adduser xrdp ssl-cert
 sudo systemctl restart xrdp
