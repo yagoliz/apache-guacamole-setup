@@ -14,8 +14,8 @@ services:
       MYSQL_USER: "guacamole_user"
       MYSQL_PASSWORD: "<GUACAMOLE_PASSWORD>"
     volumes:
-      - ./data/mysql:/var/lib/mysql
-      - ./scripts:/docker-entrypoint-initdb.d
+      - ./data/mysql:/var/lib/mysql:Z
+      - ./scripts:/docker-entrypoint-initdb.d:z
 
   guacamole:
     image: guacamole/guacamole

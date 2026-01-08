@@ -96,6 +96,13 @@ echo ""
 echo "📁 Creating directories..."
 mkdir -p scripts data/mysql
 
+# Check for SELinux and provide info
+if command -v getenforce >/dev/null 2>&1; then
+    if [ "$(getenforce)" = "Enforcing" ]; then
+        echo "ℹ️  SELinux is enabled - volume mounts configured with proper labels"
+    fi
+fi
+
 # Generate docker-compose.yml from template
 echo "🔧 Generating docker-compose.yml from template..."
 if [ ! -f "docker-compose.yml.template" ]; then
